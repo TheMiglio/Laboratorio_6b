@@ -18,6 +18,7 @@ function otherDiv1() {
     document.getElementById("div1").style.background = color;
     if(document.getElementById("div1").style.background == "") {
         document.getElementById("div1").style.background = "black";
+
         document.getElementById("othertext").value = "Insert color";
         alert("Insert a valid color!");
     }
@@ -29,7 +30,7 @@ function otherDiv1() {
 }
 
 function white(){
-    document.getElementById("div1").style.background="white";
+    document.getElementById("div1").style.background="";
 }
 
 function acquireColors() {
@@ -48,9 +49,16 @@ function acquireColors() {
 
 function changeTitle(){
     var h = document.getElementsByTagName("h1");
+    var d = document.getElementsByTagName("div");
     var colorSelected=document.getElementById("colortitleselect").value;
     for (var i = 0; i < h.length; i++) {
-        h[i].style.color=colorSelected;
+        if(d[i].style.background!=colorSelected&&d[i].style.background!="")
+            h[i].style.color=colorSelected;
+        else if (d[i].style.background==colorSelected&&d[i].style.background!="black")
+            h[i].style.color="white";
+        else
+            h[i].style.color="black";
+
     }
 }
 
