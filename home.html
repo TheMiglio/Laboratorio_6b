@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab6b</title>
+    <script src="6bScript.js"></script>
+</head>
+<body onload="acquireColors()">
+<div id="div1">
+    <h1>Division 1</h1>
+    <form>
+        Background color of Division 1: <select id="div1colors">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="other">Other...</option>
+    </select>
+        <input type="text" id="othertext" disabled value="Insert color" onclick="otherDiv1()">
+    </form><br>
+    <button id="changecolor" onclick="changecolorDiv1(),acquireColors()">Change color</button>
+    <button id="white" onclick="white()">White</button>
+</div>
+<div id="div2">
+    <h1>Division 2</h1>
+    <form>
+        Change color of all division: <select id="colortitleselect"></select>
+    </form>
+    <button id="changetitlebutton" onclick="changeTitle()">Change color</button>
+</div>
+<div id="createDiv">
+    <h1>Create new div</h1>
+    Insert background color of new div: <input type="text" id="newDivColor">
+    Insert position of new div: <input type="text" id="newDivPos" >
+    <button id="createDivButton" onclick="createDiv(),acquireColors()">Create a new div</button>
+</div>
+</body>
+</html>
